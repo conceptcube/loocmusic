@@ -1,0 +1,335 @@
+<html>
+        <script src='fullcalendar/lib/moment.min.js'></script>
+        <script src='fullcalendar/lib/jquery.min.js'></script>
+        <script src="underscore-min.js"></script>
+        <script src="fullcalendar/fullcalendar.min.js"></script>
+        <script src="popper.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script src="jquery.popupoverlay.js"></script>
+        <script type ="text/html"src="player_api"></script>
+
+        <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+        <link rel="stylesheet" href="bootstrap.min.css" /> 
+        
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+        <!-- <script src="https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js"></script>-->
+        <!-- <script src="https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/jquery.min.js"></script> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+        <script src="http://www.youtube.com/player_api"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --> 
+
+
+    <head>
+        <style>
+            body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+#calendar {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.out-of-range{
+  opacity: .4;
+}
+
+.out-of-range-before{
+  background: repeating-linear-gradient(
+    -45deg,
+    #606dbc,
+    #606dbc 10px,
+    #465298 10px,
+    #465298 20px
+  );
+}
+
+.out-of-range-after{
+  background: repeating-linear-gradient(
+    45deg,
+    #606dbc,
+    #606dbc 10px,
+    #465298 10px,
+    #465298 20px
+  );
+}
+
+table, tr, td {
+  border: none;
+}
+
+.fc th {
+  border-style: none;
+}
+
+.fc td {
+  border-style: none;
+}
+
+.fc-day-header {
+  height: 30px;
+  font-size: 13pt;
+}
+
+.day-bg {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  height: 90%;
+  border: 1px solid #dadada;
+  border-radius: 1px;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, .08)
+}
+
+.day-name {
+  height: 25%;
+  padding-left: 2px;
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom: 1px solid #cacaca; 
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-number {
+}
+
+.week-day {
+  height: 75%;
+  border-left: 1px solid #cacaca;
+  padding-top: 1px;
+  padding-left: 12px;
+  padding-right: 5px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.fc-content-skeleton {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.fc-content-skeleton table {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+/* fc-content-skeleton 안에 숫자 데이터가 들어있는 부분 */
+.fc-day-number {
+  display: none;
+}
+
+/* fc-content-skeleton 안에 이벤트 데이터가 들어있는 부분 */
+.fc-day-grid-event {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  border: 0;
+}
+
+.fc-title {
+  font-weight: bold;
+}
+
+.fc-today {
+  background: #FFF !important;
+  border: none !important;
+}
+
+.fc-today .day-bg{
+  border: 1px solid #000000;
+} 
+
+#my_popup {
+  opacity: 0;
+  visibility: hidden;
+  display: inline-block;
+  outline: none;
+  transition: all 0.3s;
+  position: relative;
+  vertical-align: middle;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 1000px;
+}
+
+.popup-header {
+  font-weight: bold;
+  margin: 15px 10px;
+  text-align: center;
+}
+
+.popup-title  {
+  font-size: 18pt;
+  margin: 10px 10px;
+}
+
+.popup-time  {
+  font-size: 14pt;
+  margin: 10px 10px;
+}
+
+.popup-body {
+  width: 1000px;
+  height: 563px;
+  background-color: #000000;
+}
+            
+            </style>
+<script>
+    
+// youtube resize
+$(window).resize(function() { resizeYoutube() })
+function resizeYoutube(){
+  $(".popup-video").each(function(){
+    if( /^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src")) ) {
+      $('.popup-body').css("width", "100%");
+      $('.popup-body').css("height", Math.ceil( parseInt($(this).css("width")) * 480 / 854 ) + "px");
+      $(this).css("width", "100%");
+      $(this).css("height", Math.ceil( parseInt($(this).css("width")) * 480 / 854 ) + "px");
+    }
+  })
+}
+  
+$(document).ready(function() {
+
+  $('#my_popup').popup({
+    transition: 'all 0.5s',
+    onclose: function() {
+      setTimeout(function() {
+        $('.popup-video').attr('src', '')
+      }, 500);
+    }
+  });
+  
+  var opts = {
+    defaultView: 'month',
+    height: 1200,
+    header: {
+      left: 'prev,next, today',
+      center: 'title',
+      right: false
+    },
+    dayNamesShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    editable: true,
+    // eventLimit: true, // allow "more" link when too many events
+    events: [{
+      id: 0,
+      title: 'Green eyes',
+      description: '시우(XIU) _ Green eyes (Digital Single)',
+      link: 'https://www.youtube.com/embed/XfkGeLE7PYQ',
+      start: '2018-06-08T12:00:00',
+      end: '2018-06-08T14:00:00'
+    }, {
+      id: 0,
+      title: 'Green eyes2',
+      description: '시우(XIU) _ Green eyes (Digital Single)',
+      link: 'https://www.youtube.com/embed/XfkGeLE7PYQ',
+      start: '2018-06-08T14:00:00',
+      end: '2018-06-08T18:00:00'
+    }, {
+      id: 1,
+      title: '귤이의 피크닉',
+      description: '시우(XIU)_귤이의 피크닉 (Digital Single)',
+      link: 'https://www.youtube.com/embed/l3iV2xo8vEQ',
+      start: '2018-06-19T09:30:00',
+      end: '2018-06-19T17:00:00'
+    }],
+    eventColor: '#ffffff',
+    eventTextColor: '#000000',
+    displayEventTime: false,
+    eventRender: function(eventObj, $el) {
+      $el.popover({
+        title: eventObj.title,
+        content: eventObj.description,
+        trigger: 'hover',
+        placement: 'top',
+        container: 'body'
+      });
+    },
+   
+    eventClick: function(calEvent, jsEvent, view) {
+      var time = ''
+      time += moment(calEvent.start).format('A hh:mm') + ' - '
+      time += moment(calEvent.end).format('A hh:mm')
+      $('.popup-time').text(time)
+      $('.popup-title').text(calEvent.title)
+      // $('.popup-time').text(calEvent.date())
+      $('.popup-video').attr('src', calEvent.link +
+        '?enablejsapi=1' +
+        '&wmode=opaque&vq=hd1080&autoplay=1' +
+        '&modestbranding=1&autohide=1&rel=0&showinfo=0&controls=0"'
+      )
+      // $('.popup-time').text(calEvent.title)
+
+      $(function() { resizeYoutube() } )
+      $('#my_popup').popup('show')
+    }
+  
+    
+  };
+  
+  var arrayWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+  var first_event = _.min(opts.events, function(event){
+    var start = event.start;
+    return moment(start).unix();
+  });
+  var last_event = _.max(opts.events, function(event){
+    var end = event.end ? event.end : event.start;
+    return moment(end).unix();
+  });
+  var min_date = moment(first_event.start);
+  var max_date = moment(last_event.end || last_event.start); 
+  
+  opts.dayRender = function(min_date, max_date, date, cell){
+    var before_min = date.diff(min_date, "days") < 0;
+    var after_max = date.diff(max_date, "days") >= 0;
+    var temp = $('#calendar').fullCalendar('getDate')
+    var curr = new Date(temp).getMonth()
+
+    if (curr === date.month()) {
+      cell.append(
+        '<div class="day-bg">' + 
+        '<p class="day-name"><span class="day-number">' + date.date() +
+        '</span><span class="week-day">' + arrayWeek[date.weekday()] + 
+        '</span></p>' +
+        '</div>'
+       )
+    }
+  }.bind(this, min_date, max_date);
+  
+  $('#calendar').fullCalendar(opts);
+
+});
+</script>
+
+    </head>
+    <body>
+            <div id='calendar'></div>
+            <div id="my_popup" class="well popup_content">
+              <div class="popup-header">
+                <div class="popup-title"></div>
+                <div class="popup-time"></div>
+              </div>
+              <div class="popup-body">
+                <iframe width="1000px" height="563px" class="popup-video" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>  
+            </div>  
+          </body>
+          </html>
+          
+          
+      

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Event-->
+<!--캘린더스크립트-->
+
+<!-- <script src="../popper.min.js"></script> -->
+<!-- <script src="../bootstrap.min.js"></script> -->
+<!--캘린더 스크립트 끝-->
+<link rel='stylesheet' href='../fullcalendar/fullcalendar.css' />
+<!-- <link rel="stylesheet" href="bootstrap.min.css" />  -->
+
+<head>
+<!--캘린더 CSS 시작-->
+<link rel='stylesheet' href="../my_calender.css"/>
+<!--캘린더 CSS 끝-->
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../assets/img/kit/pro/apple-icon.png">
+    <link rel="icon" href="../assets/img/kit/pro/favicon.png">
+    <title>
+        LOOC.MUSIC
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/material-kit.css?v=2.0.2">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <link href="../assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
+</head>
+<body class="blog-post ">
+        <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
+            <div class="container">
+                <div class="navbar-translate">
+                    <a class="navbar-brand" href="../index.html">LOOC.MUSIC</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                <!--nav Start-->
+                <ul class="navbar-nav ml-auto">
+                        <li class="dropdown nav-item">
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <i class="material-icons">album</i>Moggi
+                                </a>
+                                    <div class="dropdown-menu dropdown-with-icons">
+                                        <a href="../sub/moggi_01.html" class="dropdown-item" target="_blank">
+                                          <i class="material-icons">album</i> beatㆍcomposition
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                          <i class="material-icons">audiotrack</i> toplineㆍmelody
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                         <i class="material-icons">border_color</i> lyricsㆍcorrection
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="material-icons">queue_music</i> arrangement
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="material-icons">straighten</i> instㆍsession
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="material-icons">keyboard_voice</i> recordingㆍvocal tune
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="material-icons">settings_input_component</i> mixingㆍmastering
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="material-icons">panorama</i> album coverㆍdesign
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="material-icons">ondemand_video</i> music videoㆍyoutube
+                                        </a>
+                                    </div>
+                         </li>
+                <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">library_music</i>LOOC.MUSIC Artist
+                        </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <a href="#" class="dropdown-item">
+                                  <i class="material-icons">music_note</i> JUU
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCr_MMG3bnblHxlSGKtFdmxg" class="dropdown-item" target="_blank">
+                                  <i class="material-icons">music_note</i> XIU
+                                </a>
+                                <a href="https://www.melon.com/artist/timeline.htm?artistId=978916" class="dropdown-item" target="_blank">
+                                  <i class="material-icons">music_note</i> Sodam
+                                </a>
+                                <a href="https://www.melon.com/artist/timeline.htm?artistId=1867208" class="dropdown-item" target="_blank">
+                                 <i class="material-icons">music_note</i> GYUL
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="material-icons">music_note</i> Elise
+                                </a>
+                                <a href="https://www.melon.com/artist/timeline.htm?artistId=2084444" class="dropdown-item" target="_blank">
+                                        <i class="material-icons">music_note</i> ConceptCube
+                                    </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="material-icons">music_note</i> JUUbrick
+                                </a>
+                            </div>
+                </li>
+                <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">stars</i>Playground
+                        </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <a href="https://open.kakao.com/o/g6Y9c1B" class="dropdown-item" target="_blank">
+                                  <i class="material-icons">star</i>Sinsadong.YAME Musician
+                                </a>
+                                <a href="https://open.kakao.com/o/gz5EleO" class="dropdown-item" target="_blank">
+                                    <i class="material-icons">mic</i>Sinsadong.YAME Vocal
+                                  </a>
+                                <a href="https://www.youtube.com/watch?v=0i5-ifhxQYk&list=PLGM6FJCII7mNSZZl7pY0XMdgvUl5FVcJn" class="dropdown-item" target="_blank">
+                                  <i class="material-icons">star</i> Sinsadong.Open Mike
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                  <i class="material-icons">star</i> KKAL Live
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                 <i class="material-icons">star</i> Haru Guitar
+                                </a>
+                            </div>
+                 </li>
+                 <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <i class="material-icons">event</i>Event
+                    </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a href="../sub/collab.html" class="dropdown-item">
+                              <i class="material-icons">people</i>collab.
+                            </a>
+                            <a href="../sub/presentation.html" class="dropdown-item">
+                              <i class="material-icons">notifications</i>presentation
+                            </a>
+                            <a href="#" class="dropdown-item" target="_blank">
+                                <i class="material-icons">movie</i>making
+                            </a>
+                        </div>
+                 </li>
+                </ul>
+                <!--nav End-->
+            </div>
+        </div>
+    </nav>
+    <div class="page-header header-filter header-small" data-parallax="true" style="background-image: url(&apos;../assets/img/bg01.jpg&apos;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ml-auto mr-auto text-center">
+                        <div class="col-md-8 ml-auto mr-auto text-center">
+                                <h1>"MOGGI"</h1>
+                                <h4>개인 뮤지션을 효율적인 음원 제작을 위한 모두의 기획사<br>신개념 음원 제작 플랫폼 모기를 소개합니다</h4>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div class="main main-raised">
+        <div class="container">
+            <div class="section">
+                        <h3 class="title text-center">beatㆍcomposition</h3>
+                        <h4 class="title text-center">
+                            "나만의 색깔, 나만의 곡을 가지고 싶은 분들은 더이상 망설이지 마세요.<br>
+                            이제 모두의 기획사 '모기'가 당신을 도와 드립니다.<br>
+                            우리는 프로를 지향하며, 현업에서 활발하게 활동중인 프로들과 함께 일합니다."
+                        </h4>                      
+                        <br>
+                    <!--face Start-->
+                        <div class="row justify-content-center" >
+                            <div class="col-md-5">
+                                <div class="card card-profile card-plain">
+                                    <div class="card-avatar">
+                                        <a href="#">
+                                            <img class="img" src="../assets/img/faces/hwani.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Hwani</h4>
+                                        <h6 class="category text-muted">Producer / Topliner</h6>
+                                        <p class="card-description">
+                                            현 루크뮤직 대표 멘토 및 탑 라이너<br>
+                                            현 드라마ost 및 걸그룹 서브프로듀서<br>
+                                            전 kac한국예술원 작곡전공졸업<br>
+                                            제2회 학교 컴필레이션 앨범 총괄 기획<br>
+                                            각종 mr 제작 및 입시참여 레슨 다수<br>
+                                            김형석작곡가님 사사<br>
+                                            전 창스ent 서브프로듀서
+                                        </p>
+                                    </div>
+                                    <div class="card-footer justify-content-center">
+                                        <a href="#" class="btn btn-just-icon btn-link btn-youtube">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-just-icon btn-link btn-instagram">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        <a href="#" class="btn btn-just-icon btn-link btn-facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                    <div class="card card-profile card-plain">
+                                        <div class="card-avatar">
+                                            <a href="#">
+                                                <img class="img" src="../assets/img/faces/xiulee2.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">XIU</h4>
+                                            <h6 class="category text-muted">Producer / Technical art director</h6>
+                                            <p class="card-description">
+                                                싱어송라이터 와 아트디렉터를 병행하고 있는 프로듀서 <br>
+                                                현 루크뮤직 대표 뮤지션<br>
+                                                뮤지션 귤 GYUL 프로듀싱 앨범 "빨강망토(가제)" 진행 중<br>
+                                                밴드 멜팅포인트 리드보컬 정진우 프로듀싱 앨범 "red dot" 진행 중<br>
+                                                모델 신이지 프로듀싱 앨범 '미인' 제작 중<br>
+                                                뮤지컬 배우 한결 프로듀싱 앨범  '그냥' 제작 중<br>
+                                                그 외 다수의 앨범 프로듀싱
+                                            </p>
+                                        </div>
+                                        <div class="card-footer justify-content-center">
+                                            <a href="https://goo.gl/FRdxjG" class="btn btn-just-icon btn-link btn-youtube">
+                                                <i class="fa fa-youtube"></i>
+                                            </a>
+                                            <a href="https://instagram.com/official.xiu" class="btn btn-just-icon btn-link btn-instagram">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            <a href="https://facebook.com/official.xiu" class="btn btn-just-icon btn-link btn-facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <!--face End-->  
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-plain card-blog">
+                                    <div class="card-header card-header-image">
+                                        <a href="http://playlooc.com/product/detail.html?product_no=133&cate_no=82&display_group=1" target="_blank">
+                                            <img class="img img-raised" src="../assets/img/card-blog01.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-category text-info">Price1</h6>
+                                        <h4 class="card-title">
+                                            <a href="#pablo">￦ 50,000</a>
+                                        </h4>
+                                        <p class="card-description">
+                                            Predicted Time : 1 day<br>
+                                            Modification : 1 time<br>
+                                            Producer : Hwani<br>
+                                            Producer : XIU<br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-plain card-blog">
+                                    <div class="card-header card-header-image">
+                                        <a href="http://playlooc.com/product/detail.html?product_no=133&cate_no=82&display_group=1" target="_blank">
+                                            <img class="img img-raised" src="../assets/img/card-blog01.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-category text-success">
+                                                <i class="material-icons"></i>Price2
+                                        </h6>
+                                        <h4 class="card-title">
+                                            <a href="#pablo">￦ 100,000</a>
+                                        </h4>
+                                        <p class="card-description">
+                                            Predicted Time : 3 day<br>
+                                            Modification : 3 time<br>
+                                            Producer : Hwani<br>
+                                            Producer : XIU<br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-plain card-blog">
+                                    <div class="card-header card-header-image">
+                                        <a href="http://playlooc.com/product/detail.html?product_no=133&cate_no=82&display_group=1" target="_blank">
+                                            <img class="img img-raised" src="../assets/img/card-blog01.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-category text-danger">
+                                            <i class="material-icons"></i>Price3
+                                        </h6>
+                                        <h4 class="card-title">
+                                            <a href="#pablo">￦ 200,000</a>
+                                        </h4>
+                                        <p class="card-description">
+                                            Predicted Time : 7 day<br>
+                                            Modification : 7 time<br>
+                                            Producer : Hwani<br>
+                                            Producer : XIU<br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-raised card-background" style="background-image: url('../assets/img/kit/pro/examples/music1.jpg')">
+                            <div class="card-body">
+                                <h6 class="card-category text-info">Preparation</h6>
+                                    <h3 class="card-title">음원제작시 필요사항</h3>
+                                </a>
+                                <p class="card-description">
+                                   step1. 간단한 자기소개<br>
+                                   Step2. 의뢰서 (요구사항)<br>
+                                   Step3. 선호하는 음악 샘플<br>
+                                </p>
+                                <a href="https://open.kakao.com/me/xiu" class="btn btn-danger btn-round">
+                                    <i class="material-icons">assignment</i> To inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-raised card-background" style="background-image: url('../assets/img/kit/pro/examples/music2.jpg')">
+                            <div class="card-body">
+                                <h6 class="card-category text-info">Schedule</h6>
+                                <h3 class="card-title">제작일정 안내</h3>
+                                <p class="card-description">
+                                   01.STANDARD : 1 day<br>
+                                   02.DELUXE : 3 day<br>
+                                   03.PREMIUM : 7 day<br>
+                                </p>
+                                <a href="https://open.kakao.com/me/xiu" class="btn btn-primary btn-round">
+                                    <i class="material-icons">comment</i> To inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card card-raised card-background" style="background-image: url('../assets/img/bg14.jpg')">
+                            <div class="card-body">
+                                <h6 class="card-category text-info">Now talk</h6>
+                                <h3 class="card-title">지금 카카오톡으로 콜라보레이션을 지원해 보세요</h3>
+                                <p class="card-description">
+                                    상상만 하던 나만의 음악을 지금, 뮤지션 콜라보레이션을 통해 제작해 보세요. 
+                                </p>
+                                <a href="https://open.kakao.com/me/xiu" class="btn btn-warning btn-round">
+                                    <i class="material-icons">sms</i>  XIU KAKAO Talk
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                    <h3 class="title text-center">Details of the support</h3>
+                    <br>
+                <!--face Start-->
+                    <div class="row justify-content-center" >
+                        <div class="col-md-5">
+                            <div class="card card-profile card-plain">
+                                <div class="card-avatar">
+                                    <a href="#">
+                                        <img class="img" src="../assets/img/faces/music.jpg">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="title text-center">
+                                                Producing-Composition(XIU) :free<br>
+                                                Arrange : 500,000<br>
+                                                Vocal recording, Tune : 250,000<br>
+                                                Engineering-Mix, Master : 500,000<br>
+                                                Photography : 250,000<br>
+                                                Cover Design : 250,000<br>
+                                                Motion Design & Making film : 500,000<br>
+                                                Publish & Marketing : 250,000<br>
+                                    </h4>
+                                    <h4 class="category text-muted">루크뮤직은 다양한 분야의 전문가들과 함께 언제나 최고의 음악을 선물 합니다.</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--face End-->  
+            </div>
+        </div>
+        <div class="team-5 section-image" style="background-image: url(&apos;../assets/img/bg13.jpg&apos;)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-profile card-plain">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="card-header card-header-image">
+                                        <a href="#pablo">
+                                            <img class="img" src="../assets/img/faces/card-profile7-square.jpg">
+                                        </a>
+                                        <div class="ripple-container"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h4 class="card-title">LOOC.MUSIC</h4>
+                                        <h6 class="card-category text-danger">We are all artist! </h6>
+                                        <p class="card-description">
+                                           크리에이터들의 놀이터, 공부하지마 그냥 놀아! 지금 당신을 플레이그라운드 루크로 초대합니다.
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="http://playlooc.com/" class="btn btn-just-icon btn-link btn-white">
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                        <a href="https://www.youtube.com/channel/UCYOMNPotD-jTj5hUlS8hSwQ" class="btn btn-just-icon btn-link btn-white">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                        <a href="https://www.facebook.com/looc.academy/" class="btn btn-just-icon btn-link btn-white">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/looc.academy/" class="btn btn-just-icon btn-link btn-white">
+                                                <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-profile card-plain">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="card-header card-header-image">
+                                        <a href="#pablo">
+                                            <img class="img" src="../assets/img/faces/card-profile8-square.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Moggi</h4>
+                                        <h6 class="card-category text-danger">Easy Music Making</h6>
+                                        <p class="card-description">
+                                            셀프 뮤직 메이킹이 가능한 모두의 기획사 '모기'에서 당신의 첫번째 음악을 제작해 보세요
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="http://playlooc.com/product/list.html?cate_no=82" class="btn btn-just-icon btn-link btn-white">
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subscribe-line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="title">Send E-mail &amp; 추가 문의사항</h3>
+                        <p class="description">
+                          루크.뮤직 콜라보레이션에 문의사항이 있으신 분은 아래의 이메일로 문의 주세요<br>
+                          looc.musician@gmail.com
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-plain card-form-horizontal">
+                            <div class="card-body">
+                                <form method="" action="">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-primary btn-round btn-block"><i class="material-icons">mail</i> looc.music </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src='../fullcalendar/lib/moment.min.js'></script>
+    <script src='../fullcalendar/lib/jquery.min.js'></script>
+    <script src="../underscore-min.js"></script>
+    <script src="../fullcalendar/fullcalendar.min.js"></script>
+    <!-- <script src="./assets/js/core/jquery.min.js"></script> -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/bootstrap-material-design.js"></script>
+    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+
+    <!--  Google Maps Plugin  -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
+    <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--	Plugin for Small Gallery in Product Page -->
+    <script src="../assets/js/plugins/jquery.flexisel.js"></script>
+    <!-- Plugins for presentation and navigation  -->
+    <script src="../assets/assets-for-demo/js/modernizr.js"></script>
+    <script src="../assets/assets-for-demo/js/vertical-nav.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="../assets/js/material-kit.js?v=2.0.2"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="../assets/assets-for-demo/js/material-kit-demo.js"></script>
+
+
+    <script type ="text/html"src="player_api"></script>
+    <script src="../my_calender.js"></script>
+</body>
+
+</html>
